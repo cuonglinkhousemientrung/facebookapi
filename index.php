@@ -9,7 +9,7 @@ $list_reaction = ['LIKE', 'LOVE', 'WOW', 'HAHA', 'SAD', 'ANGRY']; // List Reacti
 $list_user = ['100009365958755']; // List User ID 
 
 foreach ($list_user as $userID) {
-	$posts = curl(ENDPOINT.$userID.'/posts?fields=id&limit=1&access_token='.ACCESS_TOKEN);
+	$get = curl(ENDPOINT.$userID.'/posts?fields=id&limit=1&access_token='.ACCESS_TOKEN);
 
 	$idFirstPost = $posts->data[0]->id;
 	if(checkReaction($idFirstPost)) {
